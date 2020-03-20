@@ -2,7 +2,7 @@
 tips
 
 -----
-不要用 PyTorch 0.3.0，代码已经升级到1.3.0了。conda的环境配置见《conda-envs.yaml》。
+#### 不要用 PyTorch 0.3.0，代码已经升级到1.3.0了。conda的环境配置见《conda-envs.yaml》。
 重点：
 pytorch                   1.3.0           py3.7_cuda10.0.130_cudnn7.6.3_0    pytorch
 pillow                    6.1.0            py37h6b7be26_1    conda-forge
@@ -10,10 +10,10 @@ cudatoolkit               10.0.130                      0    defaults
 opencv                    3.4.2            py37h6fd60c2_1    defaults
 torchvision               0.4.1                py37_cu100    pytorch
 
--------------------------------------------------------------------------------
-ERFNet_trained.tar文件，不用解压
------
-no cuda capable device is detected
+
+#### ERFNet_trained.tar文件，不用解压
+
+#### no cuda capable device is detected
 test_erfnet.sh文件，需要更改，内容如下：
 （1）gpus，原来是5、6、7、8 GPU。
 （2）test_img，更改目录。
@@ -27,21 +27,19 @@ python3 -u test_erfnet.py CULane ERFNet train test_img \
                           -j 10 \
                           -b 5
 
------
-sync_bn 错误，如果不训练model，可以注释 from models import sync_bn
+#### sync_bn 错误，如果不训练model，可以注释 from models import sync_bn
 如果训练model，自行下载syncbn。
------
-pil错误，7.0没有此方法，降级到6.1，
-conda install pillow==6.1
------
 
-AttributeError: 'NoneType' object has no attribute 'astype'
+#### pil错误，7.0没有此方法，降级到6.1，
+conda install pillow==6.1
+
+
+#### AttributeError: 'NoneType' object has no attribute 'astype'
 图片路径需要更改，形成如下路径
 /root/Codes-for-Lane-Detection/ERFNet-CULane-PyTorch/test_img/list   【test_img.txt】
 /root/Codes-for-Lane-Detection/ERFNet-CULane-PyTorch/test_img/driver_37_30frame/05181432_0203.MP4   【里面有各种图片】
 
------
-voc_aug.py错误，更改路径：
+#### voc_aug.py错误，更改路径：
 /root/Codes-for-Lane-Detection/ERFNet-CULane-PyTorch/dataset/voc_aug.py
 
 def __init__(self, dataset_path='/root/Codes-for-Lane-Detection/ERFNet-CULane-PyTorch/test_img/list', data_list='train', transform=None):
