@@ -1,15 +1,8 @@
 
 tips
 
------
 #### 不要用 PyTorch 0.3.0，代码已经升级到1.3.0了。conda的环境配置见《conda-envs.yaml》。
-重点：
-pytorch                   1.3.0           py3.7_cuda10.0.130_cudnn7.6.3_0    pytorch
-pillow                    6.1.0            py37h6b7be26_1    conda-forge
-cudatoolkit               10.0.130                      0    defaults
-opencv                    3.4.2            py37h6fd60c2_1    defaults
-torchvision               0.4.1                py37_cu100    pytorch
-
+导入conda配置，使用：conda env create -f conda-envs.yaml
 
 #### ERFNet_trained.tar文件，不用解压
 
@@ -43,7 +36,6 @@ conda install pillow==6.1
 /root/Codes-for-Lane-Detection/ERFNet-CULane-PyTorch/dataset/voc_aug.py
 
 def __init__(self, dataset_path='/root/Codes-for-Lane-Detection/ERFNet-CULane-PyTorch/test_img/list', data_list='train', transform=None):
-
 
 
 -------------------------------------------------------------------------
