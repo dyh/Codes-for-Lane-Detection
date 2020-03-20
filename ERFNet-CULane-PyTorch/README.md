@@ -8,8 +8,9 @@ tips
 
 #### no cuda capable device is detected
 test_erfnet.sh文件，需要更改，内容如下：
-（1）gpus，原来是5、6、7、8 GPU。
-（2）test_img，更改目录。
+1. gpus，原来是5、6、7、8 GPU。
+2. test_img，更改目录。
+3. 删除了--npb参数。
 
 python3 -u test_erfnet.py CULane ERFNet train test_img \
                           --lr 0.01 \
