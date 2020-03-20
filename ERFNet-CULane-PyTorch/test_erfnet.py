@@ -10,7 +10,7 @@ import cv2
 import utils.transforms as tf
 import numpy as np
 import models
-from models import sync_bn
+#from models import sync_bn
 import dataset as ds
 from options.options import parser
 import torch.nn.functional as F
